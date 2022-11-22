@@ -14,7 +14,7 @@ public class WorkOrderController {
     @GetMapping("/workOrders")
     public List<WorkOrder> Get(){
         List<WorkOrder> items = new ArrayList<>();
-        items.add(new WorkOrder(1,"I am a Work Order"));
+        items.add(new WorkOrder(1,"I am a Work Order Edited"));
 
         return items;
 
