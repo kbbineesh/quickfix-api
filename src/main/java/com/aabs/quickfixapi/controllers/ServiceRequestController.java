@@ -13,7 +13,7 @@ public class ServiceRequestController {
     @GetMapping("/serviceRequests")
     public List<ServiceRequest> Get(){
        List<ServiceRequest> items = new ArrayList<>();
-       items.add(new ServiceRequest(1,"I am a Service Request edited"));
+       items.add(new ServiceRequest(1,"I am a Service Request e fdited"));
 
        return items;
 
