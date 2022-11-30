@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quickfixapi-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quickfixapi
+  template:
+    metadata:
+      labels:
+        app: quickfixapi
+    spec:
+      containers:
+        - name: quickfixapi
+          image: kbbineesh/quickfixapi
+          ports:
+            - containerPort: 9080
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quickfixapi-service
+spec:
+  selector:
+    app: quickfixapi
+  ports:
+    - port: 80
+      targetPort: 9080
+  type: NodePort
